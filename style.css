@@ -1,0 +1,74 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg: #16a085;
+}
+
+body{
+	background: var(--bg);
+	font-family: 'Share Tech Mono', monospace;
+}
+
+.wrapper{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#bitcoin-logo{
+	--size: 300px;
+	width: var(--size);
+	height: var(--size);
+	margin: auto;
+	margin-bottom: 30px;
+	position: relative;
+	top: -50px;
+	cursor: pointer;
+	border-radius: 50%;
+	
+	transition: 3s transform,
+				0.2s box-shadow;
+}
+
+#results{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 70%;
+	font-size: 1.5rem;
+	color: #fff;
+	font-weight: bold;
+	max-width: 350px;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+#results.show{
+	opacity: 1;
+}
+
+#results div::selection{
+	background: #000;
+	color: var(--bg);
+	opacity: 1;
+	animation: results 1.5s linear;
+}
+
+/* Animacion */
+
+#bitcoin-logo.rotate{transform: rotate(360deg);}
